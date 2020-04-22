@@ -1,16 +1,16 @@
 
 # Table of Contents
 
-1.  [Introduction](#org2059291)
-2.  [Récupérer le projet et procédure de rendu](#org3d143eb)
-3.  [Données](#org585f435)
-    1.  [Lire les données (exercices 1 et 2)](#org1fa12ab)
-4.  [Stocker les mots](#org0713d82)
-    1.  [Ajouter le lien entre formes, catégories et lemmes](#orgf7ae0f6)
+1.  [Introduction](#orgf3c73df)
+2.  [Récupérer le projet et procédure de rendu](#org223b5f7)
+3.  [Données](#orgde96fc9)
+    1.  [Lire les données (exercices 1 et 2)](#orga6891e2)
+4.  [Stocker les mots](#orgd68f2fa)
+    1.  [Ajouter le lien entre formes, catégories et lemmes](#org72befcf)
 
 
 
-<a id="org2059291"></a>
+<a id="orgf3c73df"></a>
 
 # Introduction
 
@@ -82,7 +82,7 @@ Le projet est à faire en binôme et à remettre pour le 25/5 (23h59) sous la fo
 d&rsquo;une *pull request* sur github.
 
 
-<a id="org3d143eb"></a>
+<a id="org223b5f7"></a>
 
 # Récupérer le projet et procédure de rendu
 
@@ -128,7 +128,7 @@ d&rsquo;une *pull request* sur github.
         branche travail, puis comparer la branche master et la branche travail
 
 
-<a id="org585f435"></a>
+<a id="orgde96fc9"></a>
 
 # Données
 
@@ -155,7 +155,7 @@ Cette ligne indique les informations suivantes:
     conjugaison standard des verbes qui finissent par `-er`.
 
 
-<a id="org1fa12ab"></a>
+<a id="orga6891e2"></a>
 
 ## Lire les données (exercices 1 et 2)
 
@@ -241,7 +241,7 @@ qui est affichée, un triplet par ligne.
            (libraries base stdio))
 
 
-<a id="org0713d82"></a>
+<a id="orgd68f2fa"></a>
 
 # Stocker les mots
 
@@ -404,7 +404,8 @@ Vous devrez écrire l&rsquo;implémentation dans `libtrie/trie.ml`:
       (libraries base stdio)
       (preprocess (pps ppx_jane ppx_deriving.std)))
 
-Pour tester, vous pouvez modifier le programme suivant (`exercice3/test_trie.ml`)
+Pour tester, vous pouvez modifier le programme suivant
+(`exercice3/test_trie.ml`).
 
     open Libtrie
     open Stdio
@@ -423,6 +424,12 @@ Pour tester, vous pouvez modifier le programme suivant (`exercice3/test_trie.ml`
     (executable
           (name      test_trie)
           (libraries libtrie base stdio))
+
+Pour cet exercice et les suivants, il faut d&rsquo;abord indiquer où se trouve la
+bibliothèque `trie` en créant un lien symbolique dans le répertoire source.
+
+    cd exercice3
+    ln -s ../libtrie libtrie
 
 Le programme suivant crée un trie à partir du fichier passé en argument de la
 ligne de commande puis affiche le contenu du trie, et enfin sauvegarde le résultat dans un fichier binaire appelé `lexicon.bin`.
@@ -447,7 +454,7 @@ ligne de commande puis affiche le contenu du trie, et enfin sauvegarde le résul
           (libraries libtrie base stdio))
 
 
-<a id="orgf7ae0f6"></a>
+<a id="org72befcf"></a>
 
 ## Ajouter le lien entre formes, catégories et lemmes
 
