@@ -1,23 +1,23 @@
 
 # Table of Contents
 
-1.  [Introduction](#org37357ab)
-2.  [Récupérer le projet et procédure de rendu](#org2812138)
-3.  [Données](#org1057761)
-    1.  [Lire les données (exercices 1 et 2)](#orga9a80bd)
-4.  [Stocker les mots](#org242bc6c)
-    1.  [Ajouter le lien entre formes, catégories et lemmes](#orgff7a368)
+1.  [Introduction](#org5a3631b)
+2.  [Récupérer le projet et procédure de rendu](#org5168c1e)
+3.  [Données](#org39cecc1)
+    1.  [Lire les données (exercices 1 et 2)](#org71155ab)
+4.  [Stocker les mots](#org00e8e82)
+    1.  [Ajouter le lien entre formes, catégories et lemmes](#org763c21d)
 
 
 
-<a id="org37357ab"></a>
+<a id="org5a3631b"></a>
 
 # Introduction
 
 La lemmatisation désigne le traitement d&rsquo;un texte dans lequel on trouve pour
 chaque mot (ou lexème, ou forme fléchie) son *lemme* (ou forme canonique).
 Concrètement, en français pour les noms on renvoie la variante au singulier,pour
-adjectifs on renvoie la variante au masculin singulier, et pour les verbes on
+les adjectifs on renvoie la variante au masculin singulier, et pour les verbes on
 renvoie l&rsquo;infinitif. Pour les autres types de mot (prépositions adverbes
 etc&#x2026;), on les renvoie tels quels. Par exemple:
 
@@ -82,13 +82,13 @@ Le projet est à faire en binôme et à remettre pour le 25/5 (23h59) sous la fo
 d&rsquo;une *pull request* sur github.
 
 
-<a id="org2812138"></a>
+<a id="org5168c1e"></a>
 
 # Récupérer le projet et procédure de rendu
 
 -   Sur l&rsquo;ENT du cours vous aurez accès l&rsquo;invitation pour le projet.
 -   Il faudra indiquer les membres de votre binôme et le nom de votre *équipe*.
-    Merci de l&rsquo;appeler NOM1<sub>NOM2</sub> pour faciliter la correction. Avant de continuer,
+    Merci de l&rsquo;appeler `NOM1_NOM2` pour faciliter la correction. Avant de continuer,
     assurez-vous que les deux membres du binôme ont un compte sur github.
 -   vous aurez ensuite accès à un dépot git personnel pour votre binôme. Vous
     devez le cloner pour le copier localement sur votre machine de travail (votre
@@ -128,7 +128,7 @@ d&rsquo;une *pull request* sur github.
         branche travail, puis comparer la branche master et la branche travail
 
 
-<a id="org1057761"></a>
+<a id="org39cecc1"></a>
 
 # Données
 
@@ -155,7 +155,7 @@ Cette ligne indique les informations suivantes:
     conjugaison standard des verbes qui finissent par `-er`.
 
 
-<a id="orga9a80bd"></a>
+<a id="org71155ab"></a>
 
 ## Lire les données (exercices 1 et 2)
 
@@ -241,7 +241,7 @@ qui est affichée, un triplet par ligne.
            (libraries base stdio))
 
 
-<a id="org242bc6c"></a>
+<a id="org00e8e82"></a>
 
 # Stocker les mots
 
@@ -454,7 +454,7 @@ ligne de commande puis affiche le contenu du trie, et enfin sauvegarde le résul
           (libraries libtrie base stdio))
 
 
-<a id="orgff7a368"></a>
+<a id="org763c21d"></a>
 
 ## Ajouter le lien entre formes, catégories et lemmes
 
