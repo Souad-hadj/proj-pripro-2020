@@ -1,16 +1,16 @@
 
 # Table of Contents
 
-1.  [Introduction](#orgf3c73df)
-2.  [Récupérer le projet et procédure de rendu](#org223b5f7)
-3.  [Données](#orgde96fc9)
-    1.  [Lire les données (exercices 1 et 2)](#orga6891e2)
-4.  [Stocker les mots](#orgd68f2fa)
-    1.  [Ajouter le lien entre formes, catégories et lemmes](#org72befcf)
+1.  [Introduction](#org37357ab)
+2.  [Récupérer le projet et procédure de rendu](#org2812138)
+3.  [Données](#org1057761)
+    1.  [Lire les données (exercices 1 et 2)](#orga9a80bd)
+4.  [Stocker les mots](#org242bc6c)
+    1.  [Ajouter le lien entre formes, catégories et lemmes](#orgff7a368)
 
 
 
-<a id="orgf3c73df"></a>
+<a id="org37357ab"></a>
 
 # Introduction
 
@@ -82,7 +82,7 @@ Le projet est à faire en binôme et à remettre pour le 25/5 (23h59) sous la fo
 d&rsquo;une *pull request* sur github.
 
 
-<a id="org223b5f7"></a>
+<a id="org2812138"></a>
 
 # Récupérer le projet et procédure de rendu
 
@@ -128,7 +128,7 @@ d&rsquo;une *pull request* sur github.
         branche travail, puis comparer la branche master et la branche travail
 
 
-<a id="orgde96fc9"></a>
+<a id="org1057761"></a>
 
 # Données
 
@@ -155,7 +155,7 @@ Cette ligne indique les informations suivantes:
     conjugaison standard des verbes qui finissent par `-er`.
 
 
-<a id="orga6891e2"></a>
+<a id="orga9a80bd"></a>
 
 ## Lire les données (exercices 1 et 2)
 
@@ -241,7 +241,7 @@ qui est affichée, un triplet par ligne.
            (libraries base stdio))
 
 
-<a id="orgd68f2fa"></a>
+<a id="org242bc6c"></a>
 
 # Stocker les mots
 
@@ -454,7 +454,7 @@ ligne de commande puis affiche le contenu du trie, et enfin sauvegarde le résul
           (libraries libtrie base stdio))
 
 
-<a id="org72befcf"></a>
+<a id="orgff7a368"></a>
 
 ## Ajouter le lien entre formes, catégories et lemmes
 
@@ -489,7 +489,8 @@ Donner ensuite la fonction `word_patch w (l,s)` qui effectue l&rsquo;opération 
     val word_patch : word -> word_diff -> word
 
 Ensuite on va créer le module qui va associer, dans le trie, une forme à son
-lemme représenté par la différence entre les deux mots
+lemme représenté par la différence entre les deux mots. Le lemmatiseur final se
+trouve dans `exercice 5`:
 
     open Libtrie
     open Base
@@ -534,6 +535,8 @@ lemme représenté par la différence entre les deux mots
     
     
     let () = loop ()
+
+Et le fichier `dune` associé:
 
     (executable
           (name      basic_lemmatizer)
