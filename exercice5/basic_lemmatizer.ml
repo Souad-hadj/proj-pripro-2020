@@ -12,7 +12,7 @@ let word_patch w wd = failwith "not implemented"
 let extract ic = failwith "not implemented"
 
 let lexicon =
-  In_channel.create Sys.argv.(1)
+  In_channel.create (Sys.get_argv()).(1)
   |> extract
   |> List.fold
     ~init:(Trie.empty [])

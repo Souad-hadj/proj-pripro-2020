@@ -10,6 +10,6 @@ open Stdio
 let extract ic = failwith "not implemented"
 
 let () =
-  In_channel.create Sys.argv.(1)
+  In_channel.create (Sys.get_argv()).(1)
   |> extract
   |> List.iter ~f:(fun (f,c,l) -> printf "%s %s %s\n" f c l)

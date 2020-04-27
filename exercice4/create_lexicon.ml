@@ -5,7 +5,7 @@ open Stdio
 let extract = failwith "not implemented"
 
 let () =
-  let lexicon = In_channel.create Sys.argv.(1)
+  let lexicon = In_channel.create (Sys.get_argv()).(1)
                 |> extract
                 |> List.fold ~init:(Trie.empty []) ~f:(fun acc (f,_,_) -> Trie.insert acc f ()) in
   let lwords = Trie.extract lexicon in

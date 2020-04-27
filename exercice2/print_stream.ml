@@ -11,6 +11,6 @@ let rec iter_stream st ~f = failwith "not implemented"
 
 
 let () =
-  In_channel.create Sys.argv.(1)
+  In_channel.create (Sys.get_argv()).(1)
   |> extract
   |> iter_stream ~f:(fun (f,c,l) -> printf "%s %s %s\n" f c l)

@@ -1,16 +1,16 @@
 
 # Table of Contents
 
-1.  [Introduction](#org5a3631b)
-2.  [Récupérer le projet et procédure de rendu](#org5168c1e)
-3.  [Données](#org39cecc1)
-    1.  [Lire les données (exercices 1 et 2)](#org71155ab)
-4.  [Stocker les mots](#org00e8e82)
-    1.  [Ajouter le lien entre formes, catégories et lemmes](#org763c21d)
+1.  [Introduction](#org42e2e2c)
+2.  [Récupérer le projet et procédure de rendu](#org5b023a1)
+3.  [Données](#org2cd71df)
+    1.  [Lire les données (exercices 1 et 2)](#org97daefc)
+4.  [Stocker les mots](#org2691dc2)
+    1.  [Ajouter le lien entre formes, catégories et lemmes](#org9b81668)
 
 
 
-<a id="org5a3631b"></a>
+<a id="org42e2e2c"></a>
 
 # Introduction
 
@@ -82,7 +82,7 @@ Le projet est à faire en binôme et à remettre pour le 25/5 (23h59) sous la fo
 d&rsquo;une *pull request* sur github.
 
 
-<a id="org5168c1e"></a>
+<a id="org5b023a1"></a>
 
 # Récupérer le projet et procédure de rendu
 
@@ -128,7 +128,7 @@ d&rsquo;une *pull request* sur github.
         branche travail, puis comparer la branche master et la branche travail
 
 
-<a id="org39cecc1"></a>
+<a id="org2cd71df"></a>
 
 # Données
 
@@ -155,7 +155,7 @@ Cette ligne indique les informations suivantes:
     conjugaison standard des verbes qui finissent par `-er`.
 
 
-<a id="org71155ab"></a>
+<a id="org97daefc"></a>
 
 ## Lire les données (exercices 1 et 2)
 
@@ -187,7 +187,7 @@ qui est affichée, un triplet par ligne.
         let extract ic = failwith "not implemented"
         
         let () =
-          In_channel.create Sys.argv.(1)
+          In_channel.create (Sys.get_argv()).(1)
           |> extract
           |> List.iter ~f:(fun (f,c,l) -> printf "%s %s %s\n" f c l)
     
@@ -230,7 +230,7 @@ qui est affichée, un triplet par ligne.
         
         
         let () =
-          In_channel.create Sys.argv.(1)
+          In_channel.create (Sys.get_argv()).(1)
           |> extract
           |> iter_stream ~f:(fun (f,c,l) -> printf "%s %s %s\n" f c l)
     
@@ -241,7 +241,7 @@ qui est affichée, un triplet par ligne.
            (libraries base stdio))
 
 
-<a id="org00e8e82"></a>
+<a id="org2691dc2"></a>
 
 # Stocker les mots
 
@@ -441,7 +441,7 @@ ligne de commande puis affiche le contenu du trie, et enfin sauvegarde le résul
     let extract = failwith "not implemented"
     
     let () =
-      let lexicon = In_channel.create Sys.argv.(1)
+      let lexicon = In_channel.create (Sys.get_argv()).(1)
                     |> extract
                     |> List.fold ~init:(Trie.empty []) ~f:(fun acc (f,_,_) -> Trie.insert acc f ()) in
       let lwords = Trie.extract lexicon in
@@ -454,7 +454,7 @@ ligne de commande puis affiche le contenu du trie, et enfin sauvegarde le résul
           (libraries libtrie base stdio))
 
 
-<a id="org763c21d"></a>
+<a id="org9b81668"></a>
 
 ## Ajouter le lien entre formes, catégories et lemmes
 
@@ -506,7 +506,7 @@ trouve dans `exercice 5`:
     let extract ic = failwith "not implemented"
     
     let lexicon =
-      In_channel.create Sys.argv.(1)
+      In_channel.create (Sys.get_argv()).(1)
       |> extract
       |> List.fold
         ~init:(Trie.empty [])
