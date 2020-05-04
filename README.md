@@ -1,16 +1,16 @@
 
 # Table of Contents
 
-1.  [Introduction](#org42e2e2c)
-2.  [Récupérer le projet et procédure de rendu](#org5b023a1)
-3.  [Données](#org2cd71df)
-    1.  [Lire les données (exercices 1 et 2)](#org97daefc)
-4.  [Stocker les mots](#org2691dc2)
-    1.  [Ajouter le lien entre formes, catégories et lemmes](#org9b81668)
+1.  [Introduction](#org1269b96)
+2.  [Récupérer le projet et procédure de rendu](#org9b67d7c)
+3.  [Données](#org7e1bfe8)
+    1.  [Lire les données (exercices 1 et 2)](#orgd7b5576)
+4.  [Stocker les mots](#org1354858)
+    1.  [Ajouter le lien entre formes, catégories et lemmes](#org2ac161d)
 
 
 
-<a id="org42e2e2c"></a>
+<a id="org1269b96"></a>
 
 # Introduction
 
@@ -82,7 +82,7 @@ Le projet est à faire en binôme et à remettre pour le 25/5 (23h59) sous la fo
 d&rsquo;une *pull request* sur github.
 
 
-<a id="org5b023a1"></a>
+<a id="org9b67d7c"></a>
 
 # Récupérer le projet et procédure de rendu
 
@@ -128,7 +128,7 @@ d&rsquo;une *pull request* sur github.
         branche travail, puis comparer la branche master et la branche travail
 
 
-<a id="org2cd71df"></a>
+<a id="org7e1bfe8"></a>
 
 # Données
 
@@ -155,7 +155,7 @@ Cette ligne indique les informations suivantes:
     conjugaison standard des verbes qui finissent par `-er`.
 
 
-<a id="org97daefc"></a>
+<a id="orgd7b5576"></a>
 
 ## Lire les données (exercices 1 et 2)
 
@@ -184,7 +184,7 @@ qui est affichée, un triplet par ligne.
         (* pour transformer le ic en string, vous utiliserez les fonctions input_line ou fold_lines *)
         (* cf. la documentation https://ocaml.janestreet.com/ocaml-core/latest/doc/stdio/Stdio/In_channel/index.html *)
         (* vous appellerez ensuite extract_line *)
-        let extract ic = failwith "not implemented"
+        let extract _ic = failwith "not implemented"
         
         let () =
           In_channel.create (Sys.get_argv()).(1)
@@ -223,10 +223,10 @@ qui est affichée, un triplet par ligne.
         type 'a stream = Nil | Cons of 'a * 'a stream thunk and 'a thunk = unit -> 'a
         
         (* val extract : In_channel -> (string*string*string) stream *)
-        let rec extract ic = failwith "not implemented"
+        let rec extract _ic = failwith "not implemented"
         
         (* val iter_stream : 'a stream -> ('a -> unit) -> unit *)
-        let rec iter_stream st ~f = failwith "not implemented"
+        let rec iter_stream _st ~f = failwith "not implemented"
         
         
         let () =
@@ -241,7 +241,7 @@ qui est affichée, un triplet par ligne.
            (libraries base stdio))
 
 
-<a id="org2691dc2"></a>
+<a id="org1354858"></a>
 
 # Stocker les mots
 
@@ -266,7 +266,7 @@ dans un noeud est vide (type `info`), on considérera que le préfixe n&rsquo;es
 mot valide. On va donc accéder aux `tries` avec des termes du type suivant:
 
     type 'a info = 'a list
-    type 'a t = Node of 'a list * 'a arc list and 'a arc = 'a * 'a t
+    type 'a t = Node of 'a list * 'a arc list and 'a arc = char * 'a t
 
 Dans le cas simple, on veut simplement stocker une liste de mots, le type
 d&rsquo;information sera `unit`. Par exemple, si on veut représenter le vocabulaire
@@ -454,7 +454,7 @@ ligne de commande puis affiche le contenu du trie, et enfin sauvegarde le résul
           (libraries libtrie base stdio))
 
 
-<a id="org9b81668"></a>
+<a id="org2ac161d"></a>
 
 ## Ajouter le lien entre formes, catégories et lemmes
 
@@ -501,9 +501,9 @@ trouve dans `exercice 5`:
     type t = word_diff_cat Trie.t
     
     (* code for diff and word_patch *)
-    let diff l f = failwith "not implemented"
-    let word_patch w wd = failwith "not implemented"
-    let extract ic = failwith "not implemented"
+    let diff _l _f = failwith "not implemented"
+    let word_patch _w _wd = failwith "not implemented"
+    let extract _ic = failwith "not implemented"
     
     let lexicon =
       In_channel.create (Sys.get_argv()).(1)
